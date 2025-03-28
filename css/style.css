@@ -1,0 +1,47 @@
+/* Container holds the split layout */
+.split-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Each side takes 50% of the screen */
+  .split {
+    width: 50vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Optional: Give left and right default backgrounds before Vanta loads */
+  .left {
+    background-color: white;
+  }
+  
+  .right {
+    background-color: black;
+  }
+  
+  /* Centered content (logo + tagline) */
+  .center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    color: black; /* We'll make this dynamic later if needed */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .center-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .center-content p {
+    font-size: 1.5rem;
+  }
+  
