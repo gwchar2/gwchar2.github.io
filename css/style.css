@@ -7,6 +7,14 @@
     position: relative;
   }
   
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
   /* Each side takes 50% of the screen */
   .split {
     width: 50vw;
@@ -24,24 +32,35 @@
     background-color: black;
   }
   
+  /* Black text (left side) with white shadowing */
+  .text-black{
+    color: black;
+    text-shadow: 1px 1px 4px white;
+  }
+
+  /* White text (right side) with white shadowing */
+  .text-white{
+    color: white;
+    text-shadow: 1px 1px 4px black;
+  }
+
   /* Centered content (logo + tagline) */
   .center-content {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-56%, -50%);
     z-index: 10;
     text-align: center;
-    color: black; /* We'll make this dynamic later if needed */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   .center-content h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
   }
   
   .center-content p {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   
