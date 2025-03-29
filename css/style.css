@@ -13,7 +13,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    min-width: 600px;
+    min-width: 700px;
   }
   
   /* Each side takes 50% of the screen */
@@ -42,7 +42,7 @@
   }
   
   /* Header secondary text: Code. Create. Innovate */
-  .center-content p {
+  .center-content h2 {
     font-size: 3rem;
     font-weight: bold;
   }
@@ -109,10 +109,10 @@
     position: absolute;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
     bottom: 24%;
-    left: 26%;
+    left: 26.5%;
     width: 40%;
     text-align: left;
     z-index: 10;

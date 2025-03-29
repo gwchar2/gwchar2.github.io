@@ -2,7 +2,7 @@ if (window.innerWidth > 700) {
     // Desktop: Vanta on both sides
     VANTA.NET({
       el: "#vanta-left",
-      color: 0x000000,
+      color: 0x666666,
       backgroundColor: 0xffffff,
       mouseControls: true,
       touchControls: true,
