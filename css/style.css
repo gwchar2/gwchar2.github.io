@@ -38,11 +38,13 @@
   .center-content h1 {
     font-size: 5rem;
     margin-bottom: 0.5rem;
+    font-weight: bold;
   }
   
   /* Header secondary text: Code. Create. Innovate */
   .center-content p {
     font-size: 3rem;
+    font-weight: bold;
   }
 
   /* Black text (left side) with white shadowing */
@@ -108,8 +110,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     font-size: 1.3rem;
+    font-weight: bold;
     bottom: 24%;
-    left: 27%;
+    left: 26%;
     width: 40%;
     text-align: left;
     z-index: 10;
