@@ -13,6 +13,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    min-width: 600px;
   }
   
   /* Each side takes 50% of the screen */
@@ -22,16 +23,28 @@
     position: relative;
     overflow: hidden;
   }
-  
-  /* Optional: Give left and right default backgrounds before Vanta loads */
+
+  /* Left Background */
   .left {
     background-color: white;
   }
   
+  /* Right Background */
   .right {
     background-color: black;
   }
+
+  /* Header main text: Tommer Toledo */
+  .center-content h1 {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+  }
   
+  /* Header secondary text: Code. Create. Innovate */
+  .center-content p {
+    font-size: 3rem;
+  }
+
   /* Black text (left side) with white shadowing */
   .text-black{
     color: black;
@@ -43,11 +56,23 @@
     color: white;
     text-shadow: 1px 1px 4px black;
   }
+  
+  /* For unselectable text */
+  .unselectable {
+    user-select: none;        /* Standard */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+  }
+
+  .no-wrap-heading {
+    white-space: nowrap;
+  }
 
   /* Centered content (logo + tagline) */
   .center-content {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 50%;
     transform: translate(-56%, -50%);
     z-index: 10;
@@ -55,12 +80,103 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  .center-content h1 {
-    font-size: 4rem;
-    margin-bottom: 0.5rem;
+  /* Photo wrapper */
+  .photo-wrapper {
+    position: absolute;
+    bottom: 40%;
+    left: 32%;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
   }
   
-  .center-content p {
+  /* Profile pic size and border */
+  .profile-pic {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Photo description */
+  .photo-section{
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 1.3rem;
+    bottom: 24%;
+    left: 27%;
+    width: 40%;
+    text-align: left;
+    z-index: 10;
+    line-height: 1.4;
+  }
+
+  /* About section */
+  .about-section {
+    position: absolute;
+    bottom: 32%;
+    right: 5%;
+    width: 40%;
+    color: white;
     font-size: 2rem;
+    line-height: 1.4;
+    text-align: left;
+    z-index: 10;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
+
+  /* Small Screen */
+  @media (max-width: 700px) {
+    .text-black,
+    .text-white {
+      color: black;
+      text-shadow: none;
+    }
   
+    .right {
+        display: none;
+    }
+  
+    .left {
+      width: 100vw;
+    }
+  
+    .center-content {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 4%;
+    }
+    
+    .split {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }  
+
+    .photo-wrapper {
+      position: absolute;
+      bottom: 44%;
+      left: 35%;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    
+    .profile-pic {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
