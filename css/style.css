@@ -1,27 +1,48 @@
 /* Container holds the split layout */
-.split-container {
+  .split-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    pointer-events: none; 
+  }
+  /* Each side takes 50% of the screen */
+  .split {
+    width: 50%;
+    height: 100%;
     position: relative;
+    overflow: hidden;
   }
   
   html, body {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
     min-width: 700px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    cursor:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="48" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="1" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'), auto;
+    
+    a:hover,
+    button:hover,
+    .menu-icon:hover {
+      cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="0.75" stroke-linejoin="round" d="M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z"></path></svg>'),auto;
+    }
   }
-  
-  /* Each side takes 50% of the screen */
-  .split {
-    width: 50vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+
+  /* Custom scroll bar */
+  ::-webkit-scrollbar{
+    width: 8px;
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 4px;
   }
 
   /* Left Background */
@@ -44,19 +65,16 @@
   /* Header secondary text: Code. Create. Innovate */
   .center-content h2 {
     font-size: 3rem;
-    font-weight: bold;
   }
 
   /* Black text (left side) with white shadowing */
   .text-black{
     color: black;
-    text-shadow: 1px 1px 4px white;
   }
 
   /* White text (right side) with white shadowing */
   .text-white{
     color: white;
-    text-shadow: 1px 1px 4px black;
   }
   
   /* For unselectable text */
@@ -75,17 +93,17 @@
   .center-content {
     position: absolute;
     top: 20%;
-    left: 50%;
+    left: 49.9%;
     transform: translate(-56%, -50%);
     z-index: 10;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Anton', sans-serif;
   }
   
   /* Photo wrapper */
   .photo-wrapper {
     position: absolute;
-    bottom: 40%;
+    bottom: 34%;
     left: 32%;
     width: 160px;
     height: 160px;
@@ -107,22 +125,21 @@
   /* Photo description */
   .photo-section{
     position: absolute;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Anton', sans-serif;
     color: black;
     font-size: 1.2rem;
-    font-weight: bold;
-    bottom: 24%;
-    left: 26.5%;
+    bottom: 18%;
+    left: 28.5%;
     width: 40%;
     text-align: left;
     z-index: 10;
     line-height: 1.4;
   }
 
-  /* About section */
-  .about-section {
+  /* Short About section on landing page */
+  .short-about-section {
     position: absolute;
-    bottom: 32%;
+    bottom: 16.5%;
     right: 5%;
     width: 40%;
     color: white;
@@ -130,8 +147,217 @@
     line-height: 1.4;
     text-align: left;
     z-index: 10;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Anton', sans-serif;
   }
+
+  /* Different pages */ 
+  .page-section {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+  }
+  
+  /* Content boxes for different pages */
+  .content-box {
+    width: 85%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+
+  /* Scroll buttons (up/down) */
+  .scroll-button {
+    position: fixed;
+    z-index: 100;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Section fade */
+  .fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #scroll-down {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  #scroll-up {
+    top: 20px;
+    right: 20px;
+    display: none;
+  }
+
+  /* When menu is open, makes a white X mark */
+  .nav-wrapper.open .menu-icon span {
+    background-color: white;
+  }
+
+  /* Turns side bar to white when social menu is open */
+  .nav-wrapper.open .nav-sidebar .social-icon {
+    filter: brightness(0) invert(1); 
+  }
+  
+  /* Turns navigation line to white when menu is open */
+  .nav-wrapper.open .nav-line {
+    background-color: white;
+  }
+  /* Static sidebar on bottom left */
+  .nav-sidebar {
+    position: fixed;
+    bottom: 0px;
+    left: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  /* Static line */
+  .nav-line {
+    width: 2px;
+    height: 90px;
+    background-color: black;
+    z-index: 9999;
+  }
+
+  .nav-sidebar a {
+    margin-bottom: 18px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  
+  .social-icon,
+  .material-icons {
+    width: 24px;
+    height: 24px;
+    display: block;
+    filter: brightness(0); /* black icons */
+  }
+  
+  /* Icon on hover */
+  .nav-sidebar a:hover .social-icon,
+  .nav-sidebar a:hover .material-icons {
+    transform: scale(1.2);
+    filter: brightness(0.4);
+  }
+
+  /* Sidebar button */
+  .menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    z-index: 2000;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Icon animation when open */
+  .menu-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .menu-icon:hover{
+    transform: scale(1.1);
+  }
+
+  /* Sidebar menu */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    height: 100vh;
+    width: 350px;
+    background: rgba(20, 20, 20, 0.95);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-left: 30px;
+    gap: 20px;
+    transition: transform 0.4s ease;
+    z-index: 1500;
+  }
+
+  .sidebar.show {
+    transform: translateX(350px);
+  }
+
+  /* Menu links */
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+  }
+
+  .menu-links a {
+    flex-direction: column;
+    padding-left: 80px;
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Anton', sans-serif;
+    transition: color 0.2s;
+    gap: 200px;
+  }
+
+  .menu-links a:hover {
+    color: #00bfff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /* Small Screen */

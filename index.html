@@ -2,45 +2,198 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Header Text --> 
-  <div class="center-content">
-    <h1 class="no-wrap-heading">
-      <span class="text-black unselectable">Tommer</span>
-      <span class="text-white unselectable">Toledo</span>
-    </h1>
-    <h2>
-        <span class = "text-black unselectable"> Code. Create. </span>
-        <span class = "text-white unselectable"> Innovate. </span>
-    </h2>
-  </div>
   <!-- Vanta Containers -->
   <div class="split-container">
     <div id="vanta-left" class="split left">    </div>
     <div id="vanta-right" class="split right">    </div>
   </div>
 
-  <!-- Photo -->
-  <div class="photo-wrapper">
-    <img src="assets/photo.png" alt="Tommer" class="profile-pic">
+  <!-- Navigation Wrapper, all navigation interactions -->
+  <div class="nav-wrapper">
+    <!-- Static social bar-->
+    <div class="nav-sidebar">
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/totoledo" target="_blank" aria-label="LinkedIn">
+        <img src="https://www.svgrepo.com/show/108614/linkedin.svg" alt="LinkedIn" class="social-icon">
+      </a>
+
+      <!-- Email -->
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Tommer_T@hotmail.com" target="_blank" aria-label="Email">
+        <img src="https://simpleicons.org/icons/gmail.svg" alt="Email" class="social-icon">
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/gwchar2" target="_blank" aria-label="GitHub">
+        <img src="https://simpleicons.org/icons/github.svg" class="social-icon" />
+      </a>
+
+      <div class="nav-line"></div>
+    </div>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar-container">
+      <button id="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="sidebar" class="sidebar">
+        <nav class="menu-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
   </div>
+
+  <!-- Landing page section -->
+  <section id = "hero" class = "page-section fade-section">
+    <!-- Header Text --> 
+    <div class="center-content">
+      <h1 class="no-wrap-heading">
+        <span class="text-black unselectable">Tommer</span>
+        <span class="text-white unselectable">Toledo</span>
+      </h1>
+      <h2>
+          <span class = "text-black unselectable"> Code. Create.</span>
+          <span class = "text-white unselectable"> Innovate. </span>
+      </h2>
+    </div>
+
+    <!-- Photo -->
+    <div class="photo-wrapper">
+      <img src="assets/photo.png" alt="Tommer" class="profile-pic">
+    </div>
+      
+    <!-- Photo Description -->
+    <div class="photo-section unselectable">
+      <p> Back-End Developer & Software Engineer</p>
+    </div>
+
+
+    <!-- About Text -->
+    <div class="short-about-section unselectable">
+      <p>Hello!</p>
+      <p>I'm Tommer — a 3rd-year Computer Science student at the Open University of Israel.</p>
+      <p>I focus on building secure, efficient, and user-friendly systems.</p>
+      <p>Welcome to my portfolio.</p>
+    </div>
+  </section>
+    
+  <!-- About Section -->
+  <section id="about" class="page-section fade-section">
+    <div class="content-box">
+      <h1>About Me</h1>
+      <p>Write your bio here...</p>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section id="experience" class="page-section fade-section">
+    <div class="content-box">
+      <h2>Work Experience</h2>
+      <p>Timeline or list of jobs...</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="page-section fade-section">
+    <div class="content-box">
+      <h2>Projects</h2>
+      <p>Showcase your work here...</p>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <section id="contact" class="page-section fade-section">
+    <div class="content-box">
+      <h2>Let's Connect</h2>
+      <p>Email, phone, or form here...</p>
+    </div>
+  </section>
+
+  <!-- Scroll Buttons -->
+  <button id="scroll-down" class="scroll-button">&#8595;</button>
+  <button id="scroll-up" class="scroll-button">&#8593;</button>
   
-  <!-- Photo Description -->
-  <div class="photo-section unselectable">
-    <p> Back-End Developer & Software Engineer</p>
-  </div>
+  
 
-
-  <!-- About Text -->
-  <div class="about-section unselectable">
-    <p>Hello! </p>
-    <p>I'm Tommer, a software developer focused on </p>
-    <p>building secure, efficient, and user-friendly systems.</p>
-    <p>Welcome to my portfolio.</p>
-  </div>
   <!-- Scripts -->
+  <!-- Script for scroll up/down button-->
+  <script>
+    const sections = document.querySelectorAll('.page-section');
+    const scrollDownBtn = document.getElementById('scroll-down');
+    const scrollUpBtn = document.getElementById('scroll-up');
+  
+    let currentIndex = 0;
+  
+    scrollDownBtn.addEventListener('click', () => {
+      if (currentIndex < sections.length - 1) {
+        sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  
+    scrollUpBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          currentIndex = Array.from(sections).indexOf(entry.target);
+  
+          // Toggle buttons
+          scrollUpBtn.style.display = currentIndex > 0 ? 'block' : 'none';
+          scrollDownBtn.style.display = currentIndex < sections.length - 1 ? 'block' : 'none';
+        }
+      });
+    }, {
+      threshold: 0.6 
+    });
+  
+    sections.forEach(section => observer.observe(section));
+  
+    // Fade-in effect for sections
+    const fadeSections = document.querySelectorAll('.fade-section');
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+  
+    fadeSections.forEach(section => fadeObserver.observe(section));
+  </script>
+
+  <!-- Dropdown Menu Script -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const links = sidebar.querySelectorAll('a');
+  
+    toggleBtn.addEventListener('click', () => {
+      toggleBtn.classList.toggle('open');
+      sidebar.classList.toggle('show');
+    });
+  
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('show');
+        toggleBtn.classList.remove('open');
+      });
+    });
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   <script src="js/script.js"></script>
