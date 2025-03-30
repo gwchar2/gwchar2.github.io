@@ -104,7 +104,7 @@
   .photo-wrapper {
     position: absolute;
     bottom: 34%;
-    left: 32%;
+    left: 35%;
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -120,8 +120,8 @@
     height: 350px;
     border-radius: 50%;
     object-fit: cover;
+    display: block; 
   }
-  
   /* Photo description */
   .photo-section{
     position: absolute;
@@ -254,7 +254,7 @@
     display: block;
     filter: brightness(0); /* black icons */
   }
-  
+
   /* Icon on hover */
   .nav-sidebar a:hover .social-icon,
   .nav-sidebar a:hover .material-icons {
