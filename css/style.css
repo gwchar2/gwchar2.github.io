@@ -25,6 +25,7 @@
     min-width: 700px;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    font-family: 'Anton', sans-serif;
     cursor:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="48" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="1" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'), auto;
     
     a:hover,
@@ -77,6 +78,16 @@
     color: white;
   }
   
+  .text-halfnhalf {
+    /* Create a vertical half-and-half gradient (left = black, right = white) */
+    background: linear-gradient(to right, #000 30%, #fff 50%);
+    /* Make the text fill the gradient, but stay within the shape of the character */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* For non-WebKit browsers that support background-clip: text */
+    background-clip: text;
+  }
+
   /* For unselectable text */
   .unselectable {
     user-select: none;        /* Standard */
@@ -104,7 +115,7 @@
   .photo-wrapper {
     position: absolute;
     bottom: 34%;
-    left: 35%;
+    left: 32%;
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -125,11 +136,10 @@
   /* Photo description */
   .photo-section{
     position: absolute;
-    font-family: 'Anton', sans-serif;
     color: black;
     font-size: 1.2rem;
-    bottom: 18%;
-    left: 28.5%;
+    bottom: 14%;
+    left: 25.5%;
     width: 40%;
     text-align: left;
     z-index: 10;
@@ -161,15 +171,170 @@
     z-index: 5;
   }
   
-  /* Content boxes for different pages */
+  /* Generic Content boxes for different pages */
   .content-box {
     width: 85%;
-    max-width: 800px;
+    max-width: 1100px;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
     text-align: center;
+  }
+  
+  /* The container that holds left and right columns */
+  .columns {
+    display: flex;         /* side-by-side layout */
+    gap: 1rem;            /* space between columns, optional */
+    margin-top: 1rem;     /* spacing above columns so headings don’t crowd them */
+  }
+
+  /* Left column (icons) */
+  .left-column {
+    flex: 0 0 50%;        /* or flex: 1 for auto layout, or 40% etc. */
+    position: relative;   /* if your icons use absolute positioning */
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+  }
+
+  /* Right column */
+  .right-column {
+    flex: 0 0 50%;        /* or flex: 1 for auto layout */
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    line-height: 1.4;
+  }
+
+  /* Lining right column methodologies */
+  .fa-ul {
+    list-style: none; 
+    margin-left: 1rem;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  
+  /* Heights and difference between each row in right column */
+  .fa-ul li {
+    margin-top: 1.5rem;  
+    line-height: 1.4;
+  }
+
+  /* About content box */
+  .about-box {
+    width: 85%;
+    max-width: 1100px;
+    /* background-color: rgba(255, 255, 255, 0.85); */
+    padding: 2rem;
+    border-radius: 16px;
+    /* box-shadow: 0 0 20px rgba(0,0,0,0.2); */
+  }
+
+  .about-box h1{
+    margin-top: 0;
+    margin-bottom: 1rem;  
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Wrapper for all icons */
+  .icon-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;  
+    margin-top: 2rem; 
+    overflow: hidden; /* optional, to hide icons if they exceed boundaries */
+  }
+
+    /* Individual icon styles */
+  .icon {
+    position: absolute;
+    width: 60px;       
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+  }
+
+  /* Hover effect: scale up the icon slightly */
+  .icon:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Tech Stack Icons */
+  .icon-c {
+    background-image: url('../assets/techstack/C.svg');
+  }
+  .icon-csharp {
+    background-image: url('../assets/techstack/csharp.svg');
+  }
+  .icon-cpp {
+    background-image: url('../assets/techstack/cpp.svg');
+  }
+  .icon-git {
+    background-image: url('../assets/techstack/Git.svg');
+  }
+  .icon-github-actions {
+    background-image: url('../assets/techstack/GitHubActions.svg');
+  }
+  .icon-gitlab {
+    background-image: url('../assets/techstack/GitLab.svg');
+  }
+  .icon-gradle {
+    background-image: url('../assets/techstack/Gradle.svg');
+  }
+  .icon-maven {
+    background-image: url('../assets/techstack/ApacheMaven.svg');
+  }
+  .icon-intellij {
+    background-image: url('../assets/techstack/IntelliJ.svg');
+  }
+  .icon-java {
+    background-image: url('../assets/techstack/Java.svg');
+  }
+  .icon-junit {
+    background-image: url('../assets/techstack/JUnit.svg');
+  }
+  .icon-kotlin {
+    background-image: url('../assets/techstack/Kotlin.svg');
+  }
+  .icon-linux {
+    background-image: url('../assets/techstack/Linux.svg');
+  }
+  .icon-matlab {
+    background-image: url('../assets/techstack/MATLAB.svg');
+  }
+  .icon-mongdob {
+    background-image: url('../assets/techstack/MongoDB.svg');
+  }
+  .icon-sqlite {
+    background-image: url('../assets/techstack/SQLite.svg');
+  }
+  .icon-ubuntu {
+    background-image: url('../assets/techstack/Ubuntu.svg');
+  }
+  .icon-vscode {
+    background-image: url('../assets/techstack/VSCode.svg');
+  }
+  .icon-docker {
+    background-image: url('../assets/techstack/Docker.svg');
+  }
+  .icon-linux {
+    background-image: url('../assets/techstack/Linux.svg');
+  }
+  .icon-python {
+    background-image: url('../assets/techstack/Python.svg');
+  }
+
+  /* Icon on-hover tech stack text changer */
+  .text-highlight {
+    color: 00bfff;
+    font-size: 2rem;
+    font-weight: bold;
   }
 
   /* Scroll buttons (up/down) */
@@ -198,11 +363,13 @@
     transform: translateY(0);
   }
 
+  /* Scroll down icon */
   #scroll-down {
     bottom: 20px;
     right: 20px;
   }
   
+  /* Scroll up icon */
   #scroll-up {
     top: 20px;
     right: 20px;
