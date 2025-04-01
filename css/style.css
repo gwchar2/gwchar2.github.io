@@ -157,7 +157,44 @@
     line-height: 1.4;
     text-align: left;
     z-index: 10;
-    font-family: 'Anton', sans-serif;
+  }
+
+  /* On hover connect! */
+  .hover-connect {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(
+      120deg,
+      white 0%,
+      white 40%,
+      #00BFFF 60%,
+      white 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .hover-connect:hover {
+    animation: none !important;
+    background: none !important;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #00BFFF;
+    color: #00BFFF;
+    transform: scale(1.1);
   }
 
   /* Different pages */ 
@@ -213,7 +250,8 @@
     list-style: none; 
     margin-left: 1rem;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    --fa-li-margin: 8em; /* Default is 2em */
   }
   
   /* Heights and difference between each row in right column */
@@ -221,48 +259,71 @@
     margin-top: 1.5rem;  
     line-height: 1.4;
   }
-
+  
   /* About content box */
   .about-box {
     width: 85%;
     max-width: 1100px;
-    /* background-color: rgba(255, 255, 255, 0.85); */
     padding: 2rem;
     border-radius: 16px;
-    /* box-shadow: 0 0 20px rgba(0,0,0,0.2); */
   }
 
   .about-box h1{
-    margin-top: 0;
-    margin-bottom: 1rem;  
+    margin-top: 0; 
     font-size: 4rem;
     font-weight: bold;
+    text-align: center;
+  }
+
+  .dev-explanation{
+    margin-top: 0; 
+    font-size: 2rem;
     text-align: center;
   }
 
   /* Wrapper for all icons */
   .icon-wrapper {
     position: relative;
-    width: 100%;
-    height: 400px;  
-    margin-top: 2rem; 
-    overflow: hidden; /* optional, to hide icons if they exceed boundaries */
+    width: 85%;
+    height: 500px;  
+    overflow: hidden; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 1.2rem 2rem; 
+    justify-items: center;
+    padding: 1rem;
+    align-items: center;
   }
 
+  .tech-icon {
+    background-color: #f0f0f5; /* Brighter background */
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #1e1e2f;
+    margin: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
     /* Individual icon styles */
   .icon {
-    position: absolute;
-    width: 60px;       
-    height: 60px;
-    background-size: cover;
-    background-position: center;
+    width: 45px;
+    height: 45px;
+    background-size: contain;
     background-repeat: no-repeat;
-    transition: transform 0.3s ease;
+    background-position: center;
+    margin-bottom: 0.2rem;
   }
 
-  /* Hover effect: scale up the icon slightly */
-  .icon:hover {
-    transform: scale(1.2);
+  /* Hover effect: scale up the icon slightly */ 
+  .tech-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
   
   /* Tech Stack Icons */
@@ -272,14 +333,14 @@
   .icon-csharp {
     background-image: url('../assets/techstack/csharp.svg');
   }
+  .icon-netcore {
+    background-image: url('../assets/techstack/NETcore.svg');
+  }
   .icon-cpp {
     background-image: url('../assets/techstack/cpp.svg');
   }
   .icon-git {
     background-image: url('../assets/techstack/Git.svg');
-  }
-  .icon-github-actions {
-    background-image: url('../assets/techstack/GitHubActions.svg');
   }
   .icon-gitlab {
     background-image: url('../assets/techstack/GitLab.svg');
@@ -290,23 +351,20 @@
   .icon-maven {
     background-image: url('../assets/techstack/ApacheMaven.svg');
   }
-  .icon-intellij {
-    background-image: url('../assets/techstack/IntelliJ.svg');
-  }
   .icon-java {
     background-image: url('../assets/techstack/Java.svg');
   }
   .icon-junit {
     background-image: url('../assets/techstack/JUnit.svg');
   }
+  .icon-uml {
+    background-image: url('../assets/techstack/uml.svg');
+  }
   .icon-kotlin {
     background-image: url('../assets/techstack/Kotlin.svg');
   }
   .icon-linux {
     background-image: url('../assets/techstack/Linux.svg');
-  }
-  .icon-matlab {
-    background-image: url('../assets/techstack/MATLAB.svg');
   }
   .icon-mongdob {
     background-image: url('../assets/techstack/MongoDB.svg');
@@ -317,9 +375,6 @@
   .icon-ubuntu {
     background-image: url('../assets/techstack/Ubuntu.svg');
   }
-  .icon-vscode {
-    background-image: url('../assets/techstack/VSCode.svg');
-  }
   .icon-docker {
     background-image: url('../assets/techstack/Docker.svg');
   }
@@ -328,6 +383,12 @@
   }
   .icon-python {
     background-image: url('../assets/techstack/Python.svg');
+  }
+  .icon-css {
+    background-image: url('../assets/techstack/css.svg');
+  }
+  .icon-html {
+    background-image: url('../assets/techstack/html.svg');
   }
 
   /* Icon on-hover tech stack text changer */

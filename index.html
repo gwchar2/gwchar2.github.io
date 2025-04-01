@@ -45,9 +45,9 @@
       <div id="sidebar" class="sidebar">
         <nav class="menu-links">
           <a href="#hero">Home</a>
-          <a href="#skills">Techs & Tools</a>
-          <a href="#experience">Experience</a>
+          <a href="#skills">Tech & Tools</a>
           <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -85,8 +85,10 @@
     <div class="short-about-section unselectable">
       <p>Hello!</p>
       <p>I'm Tommer — a 3rd-year Computer Science student with hands-on experience in frontend, backend development, and DevOps.</p>
-      <p>If you’re looking for someone enthusiastic about back-end development, ready to learn, and eager to make an impact, let’s connect! </p>
-      <!--<p>Welcome to my portfolio.</p>-->
+      <p>
+        If you're looking for someone enthusiastic about back-end development, ready to learn, and eager to make an impact, let's 
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Tommer_T@hotmail.com" target="_blank" class="hover-connect">connect!</a>
+      </p>
     </div>
   </section>
     
@@ -94,84 +96,76 @@
   <section id="skills" class="page-section fade-section">
     <div class="about-box unselectable">
       <!-- Techs and Tools -->
-      <h1>Techs <span class="text-halfnhalf">&amp;</span> <span class="text-white">Tools</span></h1>      
+      <h1>Developm<span class="text-white">ent Skills</span></h1>   
+      
+      <div class ="dev-explanation">
+        <p><center> Specializing in backend development, w<span class = "text-white">ith hands-on experience in networking,</span><span class = "text-black"> server-side logic, and effic</span><span class = "text-white">ient database integration.</span></center></p>
+      </div>
+      <!-- Collumn Seperation -->
       <div class = "columns">
         <!-- Left column of icons -->
         <div class="left-column">
-          <p>I've recently been working with <span id="hover-tech"></span><br><small>(Hover the icon)</small></p>
+          <!-- Development Skills -->
           <div class="icon-wrapper">
-            <!-- Each icon has a data attribute for the tech name -->
-            <div class="icon icon-c" data-tech="C"></div>
-            <div class="icon icon-csharp" data-tech="C#"></div>
-            <div class="icon icon-cpp" data-tech="C++"></div>
-            <div class="icon icon-git" data-tech="Git VCS"></div>
-            <div class="icon icon-github-actions" data-tech="GitHub Actions"></div>
-            <div class="icon icon-gitlab" data-tech="GitLab"></div>
-            <div class="icon icon-gradle" data-tech="Gradle"></div>
-            <div class="icon icon-maven" data-tech="Maven"></div>
-            <div class="icon icon-intellij" data-tech="IntelliJ"></div>
-            <div class="icon icon-java" data-tech="Java"></div>
-            <div class="icon icon-junit" data-tech="JUnit"></div>
-            <div class="icon icon-kotlin" data-tech="Kotlin"></div>
-            <div class="icon icon-linux" data-tech="Linux"></div>
-            <div class="icon icon-matlab" data-tech="MATLAB"></div>
-            <div class="icon icon-mongdob" data-tech="MongoDB"></div>
-            <div class="icon icon-sqlite" data-tech="SQLite"></div>
-            <div class="icon icon-ubuntu" data-tech="Ubuntu"></div>
-            <div class="icon icon-vscode" data-tech="VSCode"></div>
-            <div class="icon icon-docker" data-tech="Docker"></div>
-            <div class="icon icon-python" data-tech="Python"></div>
+            <!-- Languages -->
+            <div class="tech-icon"><div class="icon icon-c"></div><span>C</span></div>
+            <div class="tech-icon"><div class="icon icon-cpp"></div><span>C++</span></div>
+            <div class="tech-icon"><div class="icon icon-csharp"></div><span>C#</span></div>
+            <div class="tech-icon"><div class="icon icon-java"></div><span>Java</span></div>
+            <div class="tech-icon"><div class="icon icon-python"></div><span>Python</span></div>
+            <div class="tech-icon"><div class="icon icon-kotlin"></div><span>Kotlin</span></div>
+          
+            <!-- Frontend -->
+            <div class="tech-icon"><div class="icon icon-netcore"></div><span>.NET</span></div>
+            <div class="tech-icon"><div class="icon icon-html"></div><span>HTML</span></div>
+            <div class="tech-icon"><div class="icon icon-css"></div><span>CSS</span></div>
+            <!-- Add: JS, React, Tailwind, etc. if needed -->
+          
+            <!-- Backend -->
+            <div class="tech-icon"><div class="icon icon-gradle"></div><span>Gradle</span></div>
+            <div class="tech-icon"><div class="icon icon-maven"></div><span>Maven</span></div>
+          
+            <!-- Databases -->
+            <div class="tech-icon"><div class="icon icon-mongdob"></div><span>MongoDB</span></div>
+            <div class="tech-icon"><div class="icon icon-sqlite"></div><span>SQLite</span></div>
+          
+            <!-- VCS / CI -->
+            <div class="tech-icon"><div class="icon icon-git"></div><span>Git</span></div>
+            <div class="tech-icon"><div class="icon icon-gitlab"></div><span>GitLab</span></div>
+            <div class="tech-icon"><div class="icon icon-junit"></div><span>JUnit</span></div>
+            <div class="tech-icon"><div class="icon icon-uml"></div><span>UML</span></div>
+          
+            <!-- OS / Tools -->
+            <div class="tech-icon"><div class="icon icon-linux"></div><span>Linux</span></div>
+            <div class="tech-icon"><div class="icon icon-ubuntu"></div><span>Ubuntu</span></div>
+            <div class="tech-icon"><div class="icon icon-docker"></div><span>Docker</span></div>
           </div>
         </div>
         
         <!-- Right Column: Methodologies & Profeciencies -->
         <div class="right-column">
-          <!-- Your heading (optional) -->
-          <p>Methodologies &amp; Proficiencies</p>
+          <!-- Section: Engineering & Architecture -->
           <ul class="fa-ul">
-            <li>
-              <span class="fa-li"><i class="fas fa-network-wired"></i></span>
-              REST APIs, JSON, TCP/IP, UDP
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-layer-group"></i></span>
-              Design Patterns
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-project-diagram"></i></span>
-              Multithreading and Concurrency
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-cogs"></i></span>
-              DevOps (CI/CD, GitHub Actions)
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-microchip"></i></span>
-              Arm64 Architecture
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-cogs"></i></span>
-              PowerShell & Automation
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-users"></i></span>
-              Cross-Team Collaboration
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-database"></i></span>
-              SQL & Databases
-            </li>
+            <li><span class="fa-li"><i class="fas fa-network-wired"></i></span><p>REST APIs, JSON, TCP/IP, UDP</p></li>
+            <li><span class="fa-li"><i class="fas fa-layer-group"></i></span><p>Design Patterns</p></li>
+            <li><span class="fa-li"><i class="fas fa-project-diagram"></i></span><p>Multithreading and Concurrency</p></li>
+            <li><span class="fa-li"><i class="fas fa-microchip"></i></span><p>Arm64 Architecture</p></li>
+          </ul>
+        
+          <!-- Section: DevOps & Automation -->
+          <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fas fa-cogs"></i></span><p>DevOps (CI/CD, GitHub Actions)</p></li>
+            <li><span class="fa-li"><i class="fas fa-cogs"></i></span><p>PowerShell & Automation</p></li>
+          </ul>
+        
+          <!-- Section: Collaboration & Data -->
+          <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fas fa-users"></i></span><p>Cross-Team Collaboration</p></li>
+            <li><span class="fa-li"><i class="fas fa-database"></i></span><p>SQL & Databases</p></li>
           </ul>
         </div>
+      
       </div>
-    </div>
-  </section>
-
-  <!-- Work Experience -->
-  <section id="experience" class="page-section fade-section">
-    <div class="content-box">
-      <h2>Work Experience</h2>
-      <p>Timeline or list of jobs...</p>
     </div>
   </section>
 
@@ -180,6 +174,14 @@
     <div class="content-box">
       <h2>Projects</h2>
       <p>Showcase your work here...</p>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section id="experience" class="page-section fade-section">
+    <div class="content-box">
+      <h2>Work Experience</h2>
+      <p>Timeline or list of jobs...</p>
     </div>
   </section>
 
@@ -265,99 +267,6 @@
         sidebar.classList.remove('show');
         toggleBtn.classList.remove('open');
       });
-    });
-  </script>
-  
-  <!--Hover for Icons on tech stack -->
-  <script>
-    // Wait for the DOM to load
-    document.addEventListener("DOMContentLoaded", () => {
-      const icons = document.querySelectorAll(".icon");
-      const hoverTextSpan = document.getElementById("hover-tech");
-  
-      icons.forEach(icon => {
-        icon.addEventListener("mouseenter", () => {
-          // The data-tech attribute has the name, e.g. "Node.js"
-          const techName = icon.dataset.tech;
-          hoverTextSpan.textContent = techName;
-          hoverTextSpan.classList.add("text-highlight"); 
-        });
-  
-        icon.addEventListener("mouseleave", () => {
-          // Clear text or set it back to a default
-          hoverTextSpan.textContent = "";
-        });
-      });
-    });
-  </script>
-  
-  <!-- Random Icon positioning on tech stack -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const container = document.querySelector('.icon-wrapper');
-      const icons = document.querySelectorAll('.icon');
-  
-      const containerWidth = (container.offsetWidth);
-      const containerHeight = (container.offsetHeight);
-  
-      // We'll keep track of icons as we place them
-      icons.forEach((icon, i) => {
-        // We'll allow a certain number of attempts to find a non-overlapping position
-        let placed = false;
-        let tries = 0;
-        const maxTries = 50; // or any limit you choose
-  
-        while (!placed && tries < maxTries) {
-          tries++;
-  
-          const iconWidth = icon.offsetWidth;
-          const iconHeight = icon.offsetHeight;
-  
-          const maxLeft = containerWidth - iconWidth;
-          const maxTop = containerHeight - iconHeight;
-  
-          const randLeft = Math.random() * maxLeft;
-          const randTop = Math.random() * maxTop;
-  
-          // Temporarily position the icon
-          icon.style.left = randLeft + 'px';
-          icon.style.top = randTop + 'px';
-  
-          // Now get the bounding box of this newly positioned icon
-          const currentRect = icon.getBoundingClientRect();
-  
-          // We'll assume there's no collision until we find one
-          let collisionFound = false;
-  
-          // Check against all previously placed icons (with lower index)
-          for (let j = 0; j < i; j++) {
-            const otherIcon = icons[j];
-            const otherRect = otherIcon.getBoundingClientRect();
-  
-            // If overlapping, mark and break
-            if (isOverlapping(currentRect, otherRect)) {
-              collisionFound = true;
-              break;
-            }
-          }
-  
-          if (!collisionFound) {
-            // No collisions, so we're done placing this icon
-            placed = true;
-          } 
-          // else we loop again, trying a new random position
-        }
-      });
-  
-      // Helper collision function
-      function isOverlapping(rectA, rectB) {
-        return !(
-          rectA.right < rectB.left ||
-          rectA.left > rectB.right ||
-          rectA.bottom < rectB.top ||
-          rectA.top > rectB.bottom
-        );
-      }
     });
   </script>
 
