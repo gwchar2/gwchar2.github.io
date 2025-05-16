@@ -171,7 +171,7 @@
 
   <!-- Projects -->
   <section id="projects" class="page-section fade-section">
-    <div class="content-box">
+    <div class="content-box style="margin-top: 5%;">
       <h1><span class = "text-halfnhalf">Projects</span></h1>
       
       <div class="projects-grid">
@@ -202,6 +202,13 @@
           <p>Custom compiler with AST & TAC generation.</p>
           <div class="tags"><span>C++</span><span>Flex/Bison</span><span>Design Patterns</span></div>
         </a>
+        
+        <a href="https://github.com/gwchar2/Powbot-Bankstander" target="_blank"  class="project-card">
+          <img src="assets/projects/powbot.png" alt="Powbot">
+          <h3>PowBot Bank-Stander</h3>
+          <p>A Runescape bot built on PowBot platform.</p>
+          <div class="tags"><span>Java</span><span>Kotlin</span><span>Gradle</span><span>Maven</span></div>
+        </a>
   
         <a href="https://github.com/gwchar2/Assembler" target="_blank"  class="project-card">
           <img src="assets/projects/assembler.png" alt="Assembler">
@@ -217,26 +224,41 @@
           <div class="tags"><span>HTML5</span><span>CSS</span><span>JavaScript</span></div>
         </div>
   
-        
-        <a href="https://github.com/gwchar2/Powbot-Bankstander" target="_blank"  class="project-card">
-          <img src="assets/projects/powbot.png" alt="Powbot">
-          <h3>PowBot Bank-Stander</h3>
-          <p>A Runescape bot built on PowBot platform.</p>
-          <div class="tags"><span>Java</span><span>Kotlin</span><span>Gradle</span><span>Maven</span></div>
-        </a>
 
-
-        
     </div>
   </section>
 
   <!-- Work Experience -->
   <section id="experience" class="page-section fade-section">
-    <div class="content-box">
-      <h2>Work Experience</h2>
-      <p>Timeline or list of jobs...</p>
+    <div class="content-box" style="margin-top: 5%;">
+      <h1><span class="text-halfnhalf2">Work Experience</span></h1>
+  
+      <div class="timeline-2col">
+        
+        <!-- Left column -->
+        <div class="timeline-left">
+          <div class="entry-date"">
+            <p>Present</p>
+          </div>
+        </div>
+  
+        <!-- Center timeline line + dots -->
+        <div class="timeline-line text-black">
+          <div class="dot" style="top: 25%;"></div>
+          <div class="dot" style="top: 75%;"></div>
+        </div>
+  
+        <!-- Right column -->
+        <div class="timeline-right text-white">
+          <div class="entry-text" style="margin-top: 5%;">
+            <p>This could be you ;)</p>
+          </div>
+        </div>
+  
+      </div>
     </div>
   </section>
+  
 
   <!-- Contact / Footer -->
   <section id="contact" class="page-section fade-section">
@@ -249,7 +271,6 @@
   <!-- Scroll Buttons -->
   <button id="scroll-down" class="scroll-button">&#8595;</button>
   <button id="scroll-up" class="scroll-button">&#8593;</button>
-  
   
 
   <!-- Scripts -->
@@ -284,7 +305,7 @@
         }
       });
     }, {
-      threshold: 0.6 
+      threshold: 0.3 
     });
   
     sections.forEach(section => observer.observe(section));

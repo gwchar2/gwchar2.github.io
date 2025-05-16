@@ -84,6 +84,14 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .text-halfnhalf2 {
+    background: linear-gradient(to right, #000 50.5%, #fff 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   /* For unselectable text */
   .unselectable {
     user-select: none;        /* Standard */
@@ -129,6 +137,7 @@
     object-fit: cover;
     display: block; 
   }
+
   /* Photo description */
   .photo-section{
     position: absolute;
@@ -213,7 +222,6 @@
   }
   
   .content-box h1{
-    margin-top: 0; 
     font-size: 4rem;
     font-weight: bold;
     text-align: center;
@@ -260,7 +268,7 @@
   
   /* Scroll up icon */
   #scroll-up {
-    top: 20px;
+    bottom: 80px;
     right: 20px;
     display: none;
   }
@@ -279,6 +287,7 @@
   .nav-wrapper.open .nav-line {
     background-color: white;
   }
+
   /* Static sidebar on bottom left */
   .nav-sidebar {
     position: fixed;
@@ -635,6 +644,65 @@
 }
 
 
+/* Work experience timeline */
+.timeline-2col {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 35vh;
+  padding: 2rem 0;
+  border-radius: 4px;
+}
+
+.timeline-left,
+.timeline-right {
+  width: 45%;
+  padding: 2rem;
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(to bottom, #00ffe7, #00bcd4);
+  transform: translateX(-50%);
+  z-index: 0;
+  border-radius: 4px;
+}
+
+.dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background: white;
+  border: 3px solid black;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.entry-text {
+  position: relative;
+  text-align: right;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+.entry-date{
+  position: relative;
+  text-align: right;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+
+.timeline-right .entry-text {
+  text-align: left;
+}
 
 
   /* Small Screen */
